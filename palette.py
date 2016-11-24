@@ -96,6 +96,7 @@ class Program:
             flags, hcursor, (x,y) = win32gui.GetCursorInfo()
             color = win32gui.GetPixel(hdc, x , y)
             color = self.rgb_int_to_hex(color)
+            self.color_queue.queue.clear()
             self.color_queue.put(color)
 
     
